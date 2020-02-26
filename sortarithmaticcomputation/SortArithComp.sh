@@ -12,3 +12,7 @@ echo "$a ,$b ,$c "
 #EXPRESSION FIRST
 value1=$(($a+$b*$c))
 printf "$value1"
+
+#EXPRESSION SECOND
+value2=$(($a*$b+$c))
+printf "$value2"
