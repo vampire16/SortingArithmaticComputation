@@ -16,3 +16,7 @@ printf "$value1"
 #EXPRESSION SECOND
 value2=$(($a*$b+$c))
 printf "$value2"
+
+#EXPRESSION THIRD
+value3=$(($c+$a/$b))
+printf "$value3"
