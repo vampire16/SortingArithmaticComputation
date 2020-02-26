@@ -9,6 +9,6 @@ read -p "Enter third number : " c
 
 echo "$a ,$b ,$c "
 
-#Expression first
+#EXPRESSION FIRST
 value1=$(($a+$b*$c))
 printf "$value1"
