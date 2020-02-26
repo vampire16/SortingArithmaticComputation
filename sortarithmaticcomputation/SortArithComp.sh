@@ -36,29 +36,29 @@ echo "${arithmaticOperations[@]}"
 declare -a arithOperation
 for (( index=0; index<${#arithmaticOperations[@]}; index++ ))
 do
-	temp=$(($index+1))
-	value="${arithmaticOperations[$temp]}"
-	arithOperation[$index]=$value
+   temp=$(($index+1))
+   value="${arithmaticOperations[$temp]}"
+   arithOperation[$index]=$value
 done
 echo "${arithOperation[@]}"
 
 #FUNCTION FOR SORTING ARRAY IN DESCENDING ORDER
 function sortDescending(){
-	arr=("$@")
-	for (( index1=0; index1<${#arithOperation[@]}; index1++ ))
-	do
-		for (( index2=0; index2<${#arithOperation[@]}-1-$index1; index2++ ))
-		do
-			tempIndex=$(($index2+1))
-			if (( arr[$index2]<arr[$tempIndex] ))
-			then
-				temp=${arr[index2]}
-				arr[index2]=${arr[tempIndex]}
-				arr[tempIndex]=$temp
-			fi
-		done
-	done
-	echo "${arr[@]}"
+   arr=("$@")
+   for (( index1=0; index1<${#arithOperation[@]}; index1++ ))
+   do
+      for (( index2=0; index2<${#arithOperation[@]}-1-$index1; index2++ ))
+      do
+         tempIndex=$(($index2+1))
+	 if (( arr[$index2]<arr[$tempIndex] ))
+	 then
+	    temp=${arr[index2]}
+	    arr[index2]=${arr[tempIndex]}
+	    arr[tempIndex]=$temp
+	 fi
+      done
+   done
+   echo "${arr[@]}"
 }
 result=$( sortDescending ${arithOperation[@]} )
 echo "Result in descending order : $result"
