@@ -6,7 +6,6 @@ echo "Sorting arithmatic computation"
 read -p "Enter first number : " a
 read -p "Enter second number : " b
 read -p "Enter third number : " c
-
 echo "$a ,$b ,$c "
 
 #EXPRESSION FIRST
@@ -24,3 +23,11 @@ printf "$value3"
 #EXPRESSION FOURTH
 value4=$(($a%$b+$c))
 printf "$value4"
+
+#STORES THE RESULTS IN A DICTIONARY
+declare -A arithmaticOperations
+arithmaticOperations[1]=$value1
+arithmaticOperations[2]=$value2
+arithmaticOperations[3]=$value3
+arithmaticOperations[4]=$value4
+echo "${arithmaticOperations[@]}"
