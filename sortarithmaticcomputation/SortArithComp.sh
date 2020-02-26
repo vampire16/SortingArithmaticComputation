@@ -8,3 +8,7 @@ read -p "Enter second number : " b
 read -p "Enter third number : " c
 
 echo "$a ,$b ,$c "
+
+#Expression first
+value1=$(($a+$b*$c))
+printf "$value1"
