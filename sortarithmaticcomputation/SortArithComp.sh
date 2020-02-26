@@ -61,4 +61,26 @@ function sortDescending(){
 	echo "${arr[@]}"
 }
 result=$( sortDescending ${arithOperation[@]} )
-echo "Result in descending oredr : $result"
+echo "Result in descending order : $result"
+
+#FUNCTION FOR SORTING ARRAY IN ASCENDING ORDER
+function sortAscending(){
+   arr=("$@")
+   for (( index1=0; index1<${#arithOperation[@]}; index1++ ))
+   do
+      for (( index2=0; index2<${#arithOperation[@]}-1-$index1; index2++ ))
+      do
+         tempIndex=$(($index2+1))
+         if (( arr[$index2]>arr[$tempIndex] ))
+         then
+            temp=${arr[index2]}
+            arr[index2]=${arr[tempIndex]}
+            arr[tempIndex]=$temp
+         fi
+      done
+   done
+   echo "${arr[@]}"
+}
+result=$( sortAscending ${arithOperation[@]} )
+echo "Result in ascending order : $result"
+
