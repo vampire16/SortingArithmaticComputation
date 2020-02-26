@@ -31,3 +31,13 @@ arithmaticOperations[2]=$value2
 arithmaticOperations[3]=$value3
 arithmaticOperations[4]=$value4
 echo "${arithmaticOperations[@]}"
+
+#STORES THE RESULTS IN A ARRAY
+declare -a arithOperation
+for (( index=0; index<${#arithmaticOperations[@]}; index++ ))
+do
+	temp=$(($index+1))
+	value="${arithmaticOperations[$temp]}"
+	arithOperation[$index]=$value
+done
+echo "${arithOperation[@]}"
