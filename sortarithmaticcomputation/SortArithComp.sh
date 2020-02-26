@@ -20,3 +20,7 @@ printf "$value2"
 #EXPRESSION THIRD
 value3=$(($c+$a/$b))
 printf "$value3"
+
+#EXPRESSION FOURTH
+value4=$(($a%$b+$c))
+printf "$value4"
